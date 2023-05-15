@@ -26,3 +26,5 @@ buttons[buttons.length - 1].addEventListener("click", () => {
 closeButton?.addEventListener("click", () => {
   popup?.classList.remove("active");
 });
+
+

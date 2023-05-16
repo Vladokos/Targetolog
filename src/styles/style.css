@@ -365,6 +365,10 @@
   height: 50px;
 }
 
+.max-height-112{
+  max-height: 112px;
+}
+
 .display-none {
   display: none;
 }

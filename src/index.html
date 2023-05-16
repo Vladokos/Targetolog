@@ -10,17 +10,17 @@
     <header class="bg-color-gray">
       <div class="container">
         <div class="header__inner flex-sb-alc">
-          <div class="logo">
-            <img src="./images/temp-logo.png" alt="" />
-          </div>
+          <a href="./index.html" class="logo">
+            <img src="./images/temp-logo.png" alt="" class="max-height-112" />
+          </a>
           <nav class="menu" id="menu">
             <ul
               class="menu-wrapper flex-sb-alc gap-10 font-montserrat font-size-18"
             >
-              <li>О компании</li>
-              <li>Примеры рекламных компаний</li>
-              <li>Отзывы</li>
-              <li>Вопросы и ответы</li>
+              <li><a href="#aboutCompany">О компании</a></li>
+              <li><a href="#Examples">Примеры рекламных компаний</a></li>
+              <li><a href="#Rewies">Отзывы</a></li>
+              <li><a href="./services.html">Услуги</a></li>
             </ul>
           </nav>
           <div class="burger" id="burger">
@@ -54,9 +54,9 @@
           </div>
         </div>
       </div>
-      <div class="strategy padding-top-100 padding-bottom-100">
+      <div class="strategy padding-top-100 padding-bottom-100" id="aboutCompany">
         <div class="container">
-          <div class="strategy__inner">
+          <div class="strategy__inner" >
             <h2
               class="text-align-center font-montserrat-medium font-size-40 grey-color margin-bottom-120"
             >
@@ -129,6 +129,7 @@
           </div>
         </div>
       </div>
+
       <div class="offer padding-top-100 padding-bottom-100">
         <div class="container">
           <div class="offer__inner">
@@ -146,7 +147,7 @@
           </div>
         </div>
       </div>
-      <div class="completed padding-top-100 padding-bottom-100">
+      <div class="completed padding-top-100 padding-bottom-100" id="Examples">
         <div class="container">
           <div class="completed__inner">
             <h2
@@ -241,7 +242,7 @@
           </div>
         </div>
       </div>
-      <div class="reviews padding-top-100 padding-bottom-100">
+      <div class="reviews padding-top-100 padding-bottom-100" id="Rewies">
         <div class="container">
           <div class="reviews__inner flex-column-center">
             <h2
@@ -364,38 +365,40 @@
     <div class="poup" id="popup">
       <div class="container">
         <div class="poup__inner" id="poup__inner">
-            <div class="first">
-                <div class="title font-montserrat-light font-size-18 ln-height-34">Оставить заявку</div>
-                <img src="./images/cancel.svg" alt="close" id="close_popup">
+          <div class="first">
+            <div class="title font-montserrat-light font-size-18 ln-height-34">
+              Оставить заявку
             </div>
+            <img src="./images/cancel.svg" alt="close" id="close_popup" />
+          </div>
           <input
-              type="text"
-              required="required"
-              name="Введите имя"
-              placeholder="Введите имя"
-              autocomplete="off"
-            />
-            <input
-              type="email"
-              required="required"
-              name="Введите E-mail"
-              placeholder="mail@mail.ru"
-              autocomplete="off"
-            />
-            <input
-              type="text"
-              required="required"
-              pattern="[+)( .-]*[0-9]+[0-9+)( .-]*"
-              minlength="6"
-              name="Введите номер телефона"
-              placeholder="xxx-xxx-xxx"
-              autocomplete="off"
-            />
-            <button
-              class="red-round-button white-color font-montserrat-light font-size-18 width-350 height-50"
-            >
-              Запустить рекламу
-            </button>
+            type="text"
+            required="required"
+            name="Введите имя"
+            placeholder="Введите имя"
+            autocomplete="off"
+          />
+          <input
+            type="email"
+            required="required"
+            name="Введите E-mail"
+            placeholder="mail@mail.ru"
+            autocomplete="off"
+          />
+          <input
+            type="text"
+            required="required"
+            pattern="[+)( .-]*[0-9]+[0-9+)( .-]*"
+            minlength="6"
+            name="Введите номер телефона"
+            placeholder="xxx-xxx-xxx"
+            autocomplete="off"
+          />
+          <button
+            class="red-round-button white-color font-montserrat-light font-size-18 width-350 height-50"
+          >
+            Запустить рекламу
+          </button>
         </div>
       </div>
     </div>

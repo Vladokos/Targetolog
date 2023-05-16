@@ -4,12 +4,13 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 
+const Dotenv = require('dotenv-webpack');
 const path = require('path')
 
-const isDev =  process.env.NODE_ENV === 'development';
+const isDev = process.env.NODE_ENV === 'development';
 
 const optimization = () => {
-    if(!isDev){
+    if (!isDev) {
         const config = {
             minimizer: [
                 new TerserPlugin(),
@@ -24,7 +25,11 @@ const optimization = () => {
 
 module.exports = {
     mode: process.env.NODE_ENV,
-    entry: "./src/ts/index.ts",
+    entry: {
+        main: "./src/ts/index.ts",
+        services: "./src/ts/services.ts",
+        admin: "./src/ts/adminPanel.ts",
+    },
     output: {
         filename: "[name][hash].js",
         path: path.resolve(__dirname, 'dist'),
@@ -32,10 +37,10 @@ module.exports = {
         clean: true
     },
     devServer: {
-        port:3000,
-        open:true,
+        port: 3000,
+        open: true,
         compress: true,
-        hot:false,
+        hot: false,
         static: {
             directory: path.join(__dirname, 'dist'),
         },
@@ -43,11 +48,24 @@ module.exports = {
     optimization: optimization(),
     plugins: [
         new HtmlWebpackPlugin({
-            template: "./src/index.html"
+            filename: "index.html",
+            template: "./src/index.html",
+            chunks: ["main"]
+        }),
+        new HtmlWebpackPlugin({
+            filename: "services.html",
+            template: "./src/services.html",
+            chunks: ["services"]
+        }),
+        new HtmlWebpackPlugin({
+            filename: "adminPanel.html",
+            template: "./src/adminPanel.html",
+            chunks: ["admin"]
         }),
         new MiniCssExtractPlugin({
             filename: "[name][hash].css"
-        })
+        }),
+        new Dotenv(),
     ],
     module: {
         rules: [
@@ -63,7 +81,7 @@ module.exports = {
             },
             {
                 test: /\.css$/i,
-                use: [MiniCssExtractPlugin.loader, "css-loader","postcss-loader"],
+                use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader"],
             },
             {
                 test: /\.html$/i,

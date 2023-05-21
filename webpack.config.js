@@ -27,8 +27,6 @@ module.exports = {
     mode: process.env.NODE_ENV,
     entry: {
         main: "./src/ts/index.ts",
-        services: "./src/ts/services.ts",
-        admin: "./src/ts/adminPanel.ts",
     },
     output: {
         filename: "[name][hash].js",
@@ -51,16 +49,6 @@ module.exports = {
             filename: "index.html",
             template: "./src/index.html",
             chunks: ["main"]
-        }),
-        new HtmlWebpackPlugin({
-            filename: "services.html",
-            template: "./src/services.html",
-            chunks: ["services"]
-        }),
-        new HtmlWebpackPlugin({
-            filename: "adminPanel.html",
-            template: "./src/adminPanel.html",
-            chunks: ["admin"]
         }),
         new MiniCssExtractPlugin({
             filename: "[name][hash].css"

@@ -1,0 +1,28 @@
+.main__inner {
+  font-family: "Montserrat-Regular";
+
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.table {
+  cursor: pointer;
+}
+
+.main__inner:has(ul) {
+  display: block;
+}
+
+.main__inner > ul {
+  cursor: pointer;
+
+  display: grid;
+
+  grid-template-columns: repeat(auto-fill, minmax(100px, max-content));
+  gap: 40px;
+
+  margin-bottom: 30px;
+}
+
+
